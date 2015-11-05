@@ -1,6 +1,14 @@
 Rails.application.configure do
+<<<<<<< HEAD
     config.middleware.use Rack::LiveReload
 
+=======
+<<<<<<< HEAD
+    config.middleware.use Rack::LiveReload
+
+=======
+>>>>>>> c919cddc801cda0445392fd75877d346c38fb89d
+>>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -29,10 +37,19 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> c919cddc801cda0445392fd75877d346c38fb89d
+>>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
