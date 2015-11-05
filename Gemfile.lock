@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-<<<<<<< HEAD
     actionmailer (4.2.4)
       actionpack (= 4.2.4)
       actionview (= 4.2.4)
@@ -39,36 +38,6 @@ GEM
       tzinfo (~> 1.1)
     ansi (1.5.0)
     arel (6.0.3)
-=======
-    actionmailer (4.1.4)
-      actionpack (= 4.1.4)
-      actionview (= 4.1.4)
-      mail (~> 2.5.4)
-    actionpack (4.1.4)
-      actionview (= 4.1.4)
-      activesupport (= 4.1.4)
-      rack (~> 1.5.2)
-      rack-test (~> 0.6.2)
-    actionview (4.1.4)
-      activesupport (= 4.1.4)
-      builder (~> 3.1)
-      erubis (~> 2.7.0)
-    activemodel (4.1.4)
-      activesupport (= 4.1.4)
-      builder (~> 3.1)
-    activerecord (4.1.4)
-      activemodel (= 4.1.4)
-      activesupport (= 4.1.4)
-      arel (~> 5.0.0)
-    activesupport (4.1.4)
-      i18n (~> 0.6, >= 0.6.9)
-      json (~> 1.7, >= 1.7.7)
-      minitest (~> 5.1)
-      thread_safe (~> 0.1)
-      tzinfo (~> 1.1)
-    ansi (1.5.0)
-    arel (5.0.1.20140414130214)
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
     autoprefixer-rails (6.0.3)
       execjs
       json
@@ -120,15 +89,14 @@ GEM
     execjs (2.6.0)
     faker (1.5.0)
       i18n (~> 0.5)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.10)
     font-awesome-sass (4.4.0)
       sass (>= 3.2)
     formatador (0.2.5)
-<<<<<<< HEAD
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-=======
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
     guard (2.13.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
@@ -151,28 +119,24 @@ GEM
     guard-minitest (2.4.4)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
+    hashie (3.4.3)
     high_voltage (2.4.0)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-<<<<<<< HEAD
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
-=======
-    jquery-rails (3.1.4)
-      railties (>= 3.0, < 5.0)
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    jwt (1.5.2)
     libnotify (0.9.1)
       ffi (>= 1.0.11)
     listen (3.0.4)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-<<<<<<< HEAD
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.9)
@@ -180,14 +144,6 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.6.2)
-=======
-    lumberjack (1.0.9)
-    mail (2.5.4)
-      mime-types (~> 1.16)
-      treetop (~> 1.4.8)
-    method_source (0.8.2)
-    mime-types (1.25.1)
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
     mini_portile (0.6.2)
     minitest (5.8.2)
     minitest-capybara (0.7.2)
@@ -210,18 +166,37 @@ GEM
       minitest (>= 5.0)
       ruby-progressbar
     multi_json (1.11.2)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
     nenv (0.2.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oauth (0.4.7)
+    oauth2 (1.0.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-facebook (3.0.0)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-oauth2 (1.4.0)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
+    omniauth-twitter (1.2.1)
+      json (~> 1.3)
+      omniauth-oauth (~> 1.1)
     orm_adapter (0.5.0)
-<<<<<<< HEAD
-=======
     pg (0.18.3)
-    polyglot (0.3.5)
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -235,16 +210,11 @@ GEM
       activesupport (>= 3.0.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
-<<<<<<< HEAD
     rack (1.6.4)
-=======
-    rack (1.5.5)
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
     rack-livereload (0.3.16)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
-<<<<<<< HEAD
     rails (4.2.4)
       actionmailer (= 4.2.4)
       actionpack (= 4.2.4)
@@ -264,21 +234,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
-=======
-    rails (4.1.4)
-      actionmailer (= 4.1.4)
-      actionpack (= 4.1.4)
-      actionview (= 4.1.4)
-      activemodel (= 4.1.4)
-      activerecord (= 4.1.4)
-      activesupport (= 4.1.4)
-      bundler (>= 1.3.0, < 2.0)
-      railties (= 4.1.4)
-      sprockets-rails (~> 2.0)
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
     rails_apps_pages (0.6.4)
     rails_best_practices (1.15.7)
       activesupport
@@ -290,17 +245,9 @@ GEM
       require_all
       ruby-progressbar
     rails_layout (1.0.28)
-<<<<<<< HEAD
-    rails_serve_static_assets (0.0.4)
-    rails_stdout_logging (0.0.4)
     railties (4.2.4)
       actionpack (= 4.2.4)
       activesupport (= 4.2.4)
-=======
-    railties (4.1.4)
-      actionpack (= 4.1.4)
-      activesupport (= 4.1.4)
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
@@ -310,13 +257,8 @@ GEM
     rdoc (4.2.0)
       json (~> 1.4)
     require_all (1.3.3)
-<<<<<<< HEAD
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
-=======
-    responders (1.1.2)
-      railties (>= 3.2, < 4.2)
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
     ruby-progressbar (1.7.5)
     sass (3.4.19)
     sass-rails (5.0.4)
@@ -359,12 +301,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
-<<<<<<< HEAD
-=======
-    treetop (1.4.15)
-      polyglot
-      polyglot (>= 0.3.1)
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -387,7 +323,6 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
-  binding_of_caller
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
@@ -404,21 +339,15 @@ DEPENDENCIES
   minitest-rails
   minitest-rails-capybara
   minitest-reporters
-<<<<<<< HEAD
-=======
+  omniauth-facebook
+  omniauth-twitter
   pg
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
   pry-byebug
   pry-rails
   pundit
   quiet_assets
   rack-livereload
-<<<<<<< HEAD
   rails (= 4.2.4)
-  rails_12factor
-=======
-  rails (= 4.1.4)
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
   rails_apps_pages
   rails_best_practices
   rails_layout

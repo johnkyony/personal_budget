@@ -1,14 +1,9 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+
   devise_for :users
   resources :users
   root to: 'visitors#index'
-=======
-<<<<<<< HEAD
-  devise_for :users
-  resources :users
-  root to: 'visitors#index'
-=======
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -63,6 +58,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
->>>>>>> c919cddc801cda0445392fd75877d346c38fb89d
->>>>>>> 3b9b50d0a2f2ba0f89deb6487adae46e55b9b7d7
+
 end
