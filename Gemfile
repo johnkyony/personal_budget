@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.4'
-
-
-
+gem 'rake', '~> 0.9.6'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
