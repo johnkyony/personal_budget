@@ -30,9 +30,9 @@ group :development do
   gem 'guard-minitest'
   gem 'guard-livereload'
   gem 'rack-livereload'
-  gem 'libnotify'
+  # gem 'libnotify'
   gem 'better_errors'
-  gem 'binding_of_caller', platforms: :mri_21
+  # gem 'binding_of_caller', platforms: :mri_21
   gem 'quiet_assets'
   gem 'pry-byebug'
   gem 'pry-rails'
