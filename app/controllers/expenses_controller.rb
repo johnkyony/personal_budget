@@ -14,14 +14,14 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new 
-    wallets = Wallet.find_by_id(current_user.id)
-    if wallets.nil?
+    wallets = Wallet.all
+    if wallets.empty?
       redirect_to new_wallet_path
       flash[:notice] = "add a wallet"
          
     else
       @expense = Expense.new
-      date = params[:d].blank? ? Date.today : params[:d]
+      date = params[:d].blank? ? Date.today : params[:execution_date]
       # @expense.execution_date = date.strftime("%d.%m.%Y")   
     end   
     
