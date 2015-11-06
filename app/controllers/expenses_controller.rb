@@ -13,8 +13,19 @@ class ExpensesController < ApplicationController
   end
 
   # GET /expenses/new
-  def new
-    @expense = Expense.new
+  def new 
+    wallets = Wallet.find_by_id(current_user.id)
+    if wallets.nil!
+      redirect_to new_wallet_path
+      flash[:notice] = "add a wallet"
+         
+    else
+      @expense = Expense.new
+      date = params[:d].blank? ? Date.today : params[:d]
+      # @expense.execution_date = date.strftime("%d.%m.%Y")   
+    end   
+    
+    
   end
 
   # GET /expenses/1/edit
@@ -69,6 +80,6 @@ class ExpensesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
-      params.require(:expense).permit(:name, :amount, :done, :wallet_id, :user_id)
+      params.require(:expense).permit(:name, :amount, :done, :execution_date,:wallet_id, :user_id)
     end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106081835) do
+ActiveRecord::Schema.define(version: 20151106085641) do
 
   create_table "expenses", force: :cascade do |t|
     t.string   "name"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20151106081835) do
     t.boolean  "done"
     t.integer  "wallet_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.date     "excution_date"
   end
 
   add_index "expenses", ["user_id"], name: "index_expenses_on_user_id"
