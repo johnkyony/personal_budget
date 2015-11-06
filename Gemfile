@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.4'
-gem 'rake', '~> 0.9.6'
+
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
@@ -54,8 +54,9 @@ group :test do
   gem 'faker'
 end
 
-group :production, :postgresql do
-  gem 'pg'
+group :production do
+  gem "pg"
+  gem "rails_12factor"
 end
 
 
