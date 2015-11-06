@@ -15,7 +15,7 @@ class ExpensesController < ApplicationController
   # GET /expenses/new
   def new 
     wallets = Wallet.find_by_id(current_user.id)
-    if wallets.nil!
+    if wallets.nil?
       redirect_to new_wallet_path
       flash[:notice] = "add a wallet"
          
