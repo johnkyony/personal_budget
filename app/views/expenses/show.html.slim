@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @expense.name
+p
+  strong Amount:
+  = @expense.amount
+p
+  strong Done:
+  = @expense.done
+p
+  strong Wallet:
+  = @expense.wallet
+p
+  strong User:
+  = @expense.user
+
+= link_to 'Edit', edit_expense_path(@expense)
+'|
+= link_to 'Back', expenses_path

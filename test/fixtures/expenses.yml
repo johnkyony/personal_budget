@@ -1,0 +1,16 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  amount: 9.99
+  done: false
+  wallet: 
+  user: 
+
+two:
+  name: MyString
+  amount: 9.99
+  done: false
+  wallet: 
+  user: 

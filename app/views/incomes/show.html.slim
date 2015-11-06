@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Sources:
+  = @income.sources
+p
+  strong Amount:
+  = @income.amount
+p
+  strong Tax:
+  = @income.tax
+p
+  strong Execution date:
+  = @income.execution_date
+p
+  strong Wallet:
+  = @income.wallet
+p
+  strong User:
+  = @income.user
+
+= link_to 'Edit', edit_income_path(@income)
+'|
+= link_to 'Back', incomes_path

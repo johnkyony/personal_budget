@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @wallet.name
+p
+  strong Amount:
+  = @wallet.amount
+p
+  strong User:
+  = @wallet.user
+
+= link_to 'Edit', edit_wallet_path(@wallet)
+'|
+= link_to 'Back', wallets_path

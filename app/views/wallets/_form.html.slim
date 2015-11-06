@@ -1,0 +1,10 @@
+= simple_form_for(@wallet) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :amount
+    = f.association :user
+
+  .form-actions
+    = f.button :submit

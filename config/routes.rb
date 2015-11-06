@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :expenses
+  resources :incomes
+  resources :wallets
   devise_for :users
   resources :users
   root to: 'visitors#index'

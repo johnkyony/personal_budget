@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105161809) do
+ActiveRecord::Schema.define(version: 20151106081835) do
+
+  create_table "expenses", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "amount"
+    t.boolean  "done"
+    t.integer  "wallet_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "expenses", ["user_id"], name: "index_expenses_on_user_id"
+  add_index "expenses", ["wallet_id"], name: "index_expenses_on_wallet_id"
+
+  create_table "incomes", force: :cascade do |t|
+    t.string   "sources"
+    t.decimal  "amount"
+    t.integer  "tax"
+    t.date     "execution_date"
+    t.integer  "wallet_id"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "incomes", ["user_id"], name: "index_incomes_on_user_id"
+  add_index "incomes", ["wallet_id"], name: "index_incomes_on_wallet_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -32,5 +59,15 @@ ActiveRecord::Schema.define(version: 20151105161809) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "wallets", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "amount"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "wallets", ["user_id"], name: "index_wallets_on_user_id"
 
 end

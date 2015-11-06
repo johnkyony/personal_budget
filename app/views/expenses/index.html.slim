@@ -1,0 +1,29 @@
+h1 Listing expenses
+
+table
+  thead
+    tr
+      th Name
+      th Amount
+      th Done
+      th Wallet
+      th User
+      th
+      th
+      th
+
+  tbody
+    - @expenses.each do |expense|
+      tr
+        td = expense.name
+        td = expense.amount
+        td = expense.done
+        td = expense.wallet
+        td = expense.user
+        td = link_to 'Show', expense
+        td = link_to 'Edit', edit_expense_path(expense)
+        td = link_to 'Destroy', expense, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Expense', new_expense_path

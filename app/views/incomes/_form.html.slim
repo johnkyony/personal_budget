@@ -1,0 +1,13 @@
+= simple_form_for(@income) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :sources
+    = f.input :amount
+    = f.input :tax
+    = f.input :execution_date
+    = f.association :wallet
+    = f.association :user
+
+  .form-actions
+    = f.button :submit
