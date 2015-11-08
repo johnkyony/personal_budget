@@ -14,7 +14,16 @@ class IncomesController < ApplicationController
 
   # GET /incomes/new
   def new
-    @income = Income.new
+    wallets = Wallet.all.where(:user_id => current_user.id)
+    if wallets.empty?
+      redirect_to new_wallet_path
+      flash[:notice] = "add a wallet"
+         
+    else
+      @income = Income.new
+      date = params[:execution_date].blank? ? Date.today : params[:execution_date]
+      @income.execution_date = date.strftime("%d.%m.%Y")   
+    end   
   end
 
   # GET /incomes/1/edit
