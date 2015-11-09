@@ -1,33 +1,34 @@
     
 
 .container
-  .row.col-md-6.col-md-offset-2.custyle
-    table.table.table-striped.custab
-      thead
-    a.btn.btn-primary.btn-xs.pull-right href="/expenses/new" 
-      b +
-      | Add new categories
-    tr
-      th Name
-      th Amount
-      th Excution Date
-      th Done
-      th.text-center Action
-    tbody
-      - @expenses.each do |expense|
-        tr
-          td = expense.name
-          td = expense.amount
-          td = expense.excution_date
-          td = expense.done
+    
+
+  .btn-toolbar
+    = link_to "Add new expense",new_expense_path, class:  'btn btn-info '
+  
+  .row
+    .col-md-6.col-md-offset-2.well
+      table.table
+        thead
+          tr
+            th Name
+            th Amount
+            th Excution Date
+            th Done
+            th.text-center Action
+        tbody
+          - @expenses.each do |expense|
+            tr
+              td = expense.name
+              td = expense.amount
+              td = expense.excution_date
+              td = expense.done
+              
           
-      
-          td.text-center
-            = link_to edit_expense_path(expense), class:  'btn btn-info btn-xs' do
-             span.glyphicon.glyphicon-edit
-                 = "Edit"
-            = link_to  expense, data: {:confirm => 'Are you sure?'}, :method => :delete,class: 'btn btn-danger ' do
-              span.glyphicon.glyphicon-remove
-                = "Del"           
-            
-= link_to 'New Expense', new_expense_path       
+              td.text-center
+                = link_to edit_expense_path(expense), class:  'btn btn-info btn-xs' do
+                 span.glyphicon.glyphicon-edit
+                     = "Edit"
+                = link_to  expense, data: {:confirm => 'Are you sure?'}, :method => :delete,class: 'btn btn-danger ' do
+                  span.glyphicon.glyphicon-remove
+                    = "Del"           
