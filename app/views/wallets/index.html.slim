@@ -1,25 +1,35 @@
-h1 Listing wallets
+    
 
-table
-  thead
-    tr
-      th Name
-      th Amount
-      th User
-      th
-      th
-      th
+.container
+    
 
-  tbody
-    - @wallets.each do |wallet|
-      tr
-        td = wallet.name
-        td = wallet.amount
-        td = wallet.user
-        td = link_to 'Show', wallet
-        td = link_to 'Edit', edit_wallet_path(wallet)
-        td = link_to 'Destroy', wallet, data: {:confirm => 'Are you sure?'}, :method => :delete
+  .btn-toolbar
+    = link_to "Add new wallet",new_wallet_path, class:  'btn btn-info '
+  
+  .row
+    .col-md-6.col-md-offset-2.well
+      table.table
+        thead
+          tr
+            th Name
+            th Amount
+            
+            th.text-center Action
+        tbody
+          - @wallets.each do |wallet|
+            tr
+              td = wallet.name
+              td = wallet.amount
+              
+          
+              td.text-center
+                = link_to edit_wallet_path(wallet), class:  'btn btn-info btn-xs' do
+                 span.glyphicon.glyphicon-edit
+                     = "Edit"
+                = link_to  wallet, data: {:confirm => 'Are you sure?'}, :method => :delete,class: 'btn btn-danger btn-xs ' do
+                  span.glyphicon.glyphicon-remove
+                    = "Del"           
 
-br
 
-= link_to 'New Wallet', new_wallet_path
+
+
