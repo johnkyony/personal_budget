@@ -8,8 +8,7 @@
             th Amount
             th Done
             th Excution Date
-            th Wallet
-            th User
+           
         tbody
           - @expenses.each do |expense|
             tr
@@ -17,8 +16,7 @@
               td = expense.amount
               td = expense.excution_date
               td = expense.done
-              td = expense.wallet
-              td = expense.user
+              
               td = link_to 'Show', expense
               td = link_to 'Edit', edit_expense_path(expense)
               td = link_to 'Destroy', expense, data: {:confirm => 'Are you sure?'}, :method => :delete
