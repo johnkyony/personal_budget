@@ -5,6 +5,11 @@ class WalletsController < ApplicationController
   # GET /wallets.json
   def index
     @wallets = Wallet.all
+    wallet_id = Wallet.pluck(:id)
+    expense = Expense.all.where(:wallet_id => wallet_id)
+    income = Income.all.where(:wallet_id => wallet_id)
+    @wallet_balance = income.sum(:amount)- expense.sum(:amount)
+
   end
 
   # GET /wallets/1
