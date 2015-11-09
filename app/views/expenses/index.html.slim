@@ -4,7 +4,7 @@
   .row.col-md-6.col-md-offset-2.custyle
     table.table.table-striped.custab
       thead
-    a.btn.btn-primary.btn-xs.pull-right href="#" 
+    a.btn.btn-primary.btn-xs.pull-right href="/expenses/new" 
       b +
       | Add new categories
     tr
@@ -25,10 +25,11 @@
           td = link_to 'Edit', edit_expense_path(expense)
           td = link_to 'Destroy', expense, data: {:confirm => 'Are you sure?'}, :method => :delete
           td.text-center
-            a.btn.btn-info.btn-xs href="#" 
-              span.glyphicon.glyphicon-edit
-              | Edit
-            a.btn.btn-danger.btn-xs href="#" 
+            = link_to edit_expense_path(expense), class:  'btn btn-info btn-xs' do
+             span.glyphicon.glyphicon-edit
+                 = "Edit"
+            = link_to  expense, data: {:confirm => 'Are you sure?'}, :method => :delete,class: 'btn btn-danger btn-xs' do
               span.glyphicon.glyphicon-remove
-              | Del
+                = "Del"           
+            
 = link_to 'New Expense', new_expense_path       
