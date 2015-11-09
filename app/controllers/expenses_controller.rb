@@ -5,6 +5,7 @@ class ExpensesController < ApplicationController
   # GET /expenses.json
   def index
     @expenses = Expense.all
+    @expenses_sum = Expense.sum(:amount)
   end
 
   # GET /expenses/1
@@ -83,3 +84,5 @@ class ExpensesController < ApplicationController
       params.require(:expense).permit(:name, :amount, :done, :excution_date,:wallet_id, :user_id)
     end
 end
+
+
