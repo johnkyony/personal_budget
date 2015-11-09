@@ -10,8 +10,8 @@
     tr
       th Name
       th Amount
-      th Done
       th Excution Date
+      th Done
       th.text-center Action
     tbody
       - @expenses.each do |expense|
@@ -21,14 +21,12 @@
           td = expense.excution_date
           td = expense.done
           
-          td = link_to 'Show', expense
-          td = link_to 'Edit', edit_expense_path(expense)
-          td = link_to 'Destroy', expense, data: {:confirm => 'Are you sure?'}, :method => :delete
+      
           td.text-center
             = link_to edit_expense_path(expense), class:  'btn btn-info btn-xs' do
              span.glyphicon.glyphicon-edit
                  = "Edit"
-            = link_to  expense, data: {:confirm => 'Are you sure?'}, :method => :delete,class: 'btn btn-danger btn-xs' do
+            = link_to  expense, data: {:confirm => 'Are you sure?'}, :method => :delete,class: 'btn btn-danger ' do
               span.glyphicon.glyphicon-remove
                 = "Del"           
             
