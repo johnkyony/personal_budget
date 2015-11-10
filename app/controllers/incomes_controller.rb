@@ -23,8 +23,10 @@ class IncomesController < ApplicationController
     else
       @income = Income.new
       date = params[:execution_date].blank? ? Date.today : params[:execution_date]
-      @income.execution_date = date.strftime("%d.%m.%Y")   
-    end   
+      @income.execution_date = date.strftime("%d.%m.%Y") 
+
+    end 
+
   end
 
   # GET /incomes/1/edit
@@ -38,7 +40,7 @@ class IncomesController < ApplicationController
 
     respond_to do |format|
       if @income.save
-        format.html { redirect_to @income, notice: 'Income was successfully created.' }
+        format.html { redirect_to incomes_path , notice: 'Income was successfully created.' }
         format.json { render :show, status: :created, location: @income }
       else
         format.html { render :new }
