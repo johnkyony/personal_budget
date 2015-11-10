@@ -5,6 +5,8 @@ br
 
   .btn-toolbar
     = link_to "Add new expense",new_expense_path, class:  'btn btn-info '
+    = link_to "Current balance" , balance_index_path ,
+    class: 'btn btn-success'
   br
   .row
     .col-md-8.col-md-offset-2.well
@@ -34,5 +36,5 @@ br
                     = "Del"           
       .col.md.2
         p Balance 
-          
+
         p = @expenses_sum                       

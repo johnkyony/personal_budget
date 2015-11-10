@@ -1,8 +1,8 @@
 class BalanceController < ApplicationController
   def index
-    income = Income.all.sum
-    expenses = Expense.all.sum
-    @balance = income - expenses
+    income = Income.all
+    expenses = Expense.all.where(:done => false)
+    @balance = income.sum(:amount) - expenses.sum(:amount)
     
   end
 end

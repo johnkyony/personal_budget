@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :expenses
   resources :incomes
   resources :wallets
+  resources :balance
   devise_for :users
   resources :users
   root to: 'wallets#index'
