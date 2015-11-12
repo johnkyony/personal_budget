@@ -1,11 +1,13 @@
 class IncomesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_income, only: [:show, :edit, :update, :destroy]
 
   # GET /incomes
   # GET /incomes.json
   def index
-    @incomes = Income.all
-    @incomes_sum = Income.sum(:amount)
+    user_id = User.find_by_id(current_user.id)
+    @incomes = Income.all.where(:user_id => user_id)
+    @incomes_sum = @incomes.sum(:amount)
   end
 
   # GET /incomes/1

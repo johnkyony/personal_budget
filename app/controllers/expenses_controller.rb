@@ -4,8 +4,9 @@ class ExpensesController < ApplicationController
   # GET /expenses
   # GET /expenses.json
   def index
-    @expenses = Expense.all
-    @expenses_sum = Expense.sum(:amount)
+    user_id = User.find_by_id(current_user.id)
+    @expenses = Expense.all.where(:user_id => user_id)
+    @expenses_sum = @expenses.sum(:amount)
   end
 
   # GET /expenses/1

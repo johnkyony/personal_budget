@@ -1,10 +1,12 @@
 class WalletsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_wallet, only: [:show, :edit, :update, :destroy]
 
   # GET /wallets
   # GET /wallets.json
   def index
-    @wallets = Wallet.all
+    user_id = User.find_by_id(current_user.id)
+    @wallets = Wallet.all.where(:user_id => user_id)
     wallet_id = Wallet.pluck(:id)
     expense = Expense.all.where(:wallet_id => wallet_id)
     income = Income.all.where(:wallet_id => wallet_id)
@@ -33,7 +35,7 @@ class WalletsController < ApplicationController
 
     respond_to do |format|
       if @wallet.save
-        format.html { redirect_to @wallet, notice: 'Wallet was successfully created.' }
+        format.html { redirect_to wallets_path, notice: 'Wallet was successfully created.' }
         format.json { render :show, status: :created, location: @wallet }
       else
         format.html { render :new }
@@ -47,7 +49,7 @@ class WalletsController < ApplicationController
   def update
     respond_to do |format|
       if @wallet.update(wallet_params)
-        format.html { redirect_to @wallet, notice: 'Wallet was successfully updated.' }
+        format.html { redirect_to wallets_path, notice: 'Wallet was successfully updated.' }
         format.json { render :show, status: :ok, location: @wallet }
       else
         format.html { render :edit }
