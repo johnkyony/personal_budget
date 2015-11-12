@@ -5,9 +5,12 @@ class IncomesController < ApplicationController
   # GET /incomes
   # GET /incomes.json
   def index
+    # find user id to make sure that we see only the current users details
     user_id = User.find_by_id(current_user.id)
+    #find all income where the user id matches the user id    
     @incomes = Income.all.where(:user_id => user_id)
-    @incomes_sum = @incomes.sum(:amount)
+    #find the income balance 
+    @incomes_balance = @incomes.sum(:amount)
   end
 
   # GET /incomes/1
