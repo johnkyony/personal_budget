@@ -93,6 +93,7 @@ GEM
     font-awesome-sass (4.4.0)
       sass (>= 3.2)
     formatador (0.2.5)
+    gioco (1.1.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     guard (2.13.0)
@@ -330,6 +331,7 @@ DEPENDENCIES
   devise
   faker
   font-awesome-sass
+  gioco
   guard-bundler
   guard-livereload
   guard-minitest

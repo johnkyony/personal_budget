@@ -1,4 +1,5 @@
 class ExpensesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
 
   # GET /expenses
@@ -82,7 +83,7 @@ class ExpensesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
-      params.require(:expense).permit(:name, :amount, :done, :excution_date,:wallet_id, :user_id)
+      params.require(:expense).permit(:name, :amount, :done, :excution_date,:wallet_id, :user_id )
     end
 end
 

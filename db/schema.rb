@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106085641) do
+ActiveRecord::Schema.define(version: 20151112160716) do
+
+  create_table "badges", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "default"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "expenses", force: :cascade do |t|
     t.string   "name"
@@ -40,6 +47,27 @@ ActiveRecord::Schema.define(version: 20151106085641) do
 
   add_index "incomes", ["user_id"], name: "index_incomes_on_user_id"
   add_index "incomes", ["wallet_id"], name: "index_incomes_on_wallet_id"
+
+  create_table "kinds", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.integer  "badge_id"
+    t.integer  "User_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "points", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "kind_id"
+    t.integer  "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
