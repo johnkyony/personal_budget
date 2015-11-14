@@ -5,6 +5,6 @@ class HistoryController < ApplicationController
     # find  the current user expenses 
     @expense_history = Expense.all.where(:user_id => user_id)
     # find the current user expense history
-    @expenses_history_balance = @expense_history.sum
+    @expenses_history_balance = @expense_history.sum(:amount)
   end
 end
