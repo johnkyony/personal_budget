@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'history/index'
+
   resources :expenses
   resources :incomes
   resources :wallets

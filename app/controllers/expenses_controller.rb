@@ -11,8 +11,7 @@ class ExpensesController < ApplicationController
     @expenses = Expense.all.where(:user_id => user_id , :done => false)
     # find the current user  expense balance
     @expenses_balance = @expenses.sum(:amount)
-    # find the history of the paid of expenses
-    @expense_history  = Expense.all.where(:user_id => user_id,:done =>true)
+
   end
 
   # GET /expenses/1
