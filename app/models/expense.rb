@@ -11,6 +11,7 @@ class Expense < ActiveRecord::Base
   # validates :execution_date ,format: {with: /^(20\d\d)-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/, message: I18n.t('errors.messages.invalid_date')} 
             
   validates :wallet, presence: true
+  validates :user , presence: true
 
   # scope :not_categorized, where(wallet_id: 0)
 end
