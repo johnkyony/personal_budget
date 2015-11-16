@@ -29,6 +29,7 @@ class ExpensesController < ApplicationController
     else
       @expense = Expense.new
       date = params[:execution_date].blank? ? Date.today : params[:execution_date]
+      user_id = params[:user_id => current_user.id]
       # @expense.execution_date = date.strftime("%d.%m.%Y")   
     end   
     
