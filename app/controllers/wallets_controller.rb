@@ -5,11 +5,17 @@ class WalletsController < ApplicationController
   # GET /wallets
   # GET /wallets.json
   def index
+    # find the current user id 
     user_id = User.find_by_id(current_user.id)
+    # find current user wall 
     @wallets = Wallet.all.where(:user_id => user_id)
+    # take the wallets id which match the current user id 
     wallet_id = Wallet.pluck(:id)
+    #find the expense which have the same wallet id
     expense = Expense.all.where(:wallet_id => wallet_id)
+    # find the income which match the wallet id 
     income = Income.all.where(:wallet_id => wallet_id)
+    # calculate the balance between the income and expense
     @wallet_balance = income.sum(:amount)- expense.sum(:amount)
 
   end
