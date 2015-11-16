@@ -5,6 +5,7 @@ class Income < ActiveRecord::Base
   validates :amount, presence: true
   validates :tax , presence: true
   validates :execution_date, presence: true
+  validates :wallet , presence: true
   validates :user , presence: true
 
             
