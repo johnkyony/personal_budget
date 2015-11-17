@@ -8,7 +8,7 @@ class ExpensesController < ApplicationController
     # find user id to make sure its the current user
     user_id = User.find_by_id(current_user.id)
     # find  the current user expenses 
-    @expenses = Expense.all.where(:user_id => user_id)
+    @expenses = Expense.all
     # find the current user  expense balance
     @expenses_balance = @expenses.sum(:amount)
 
@@ -43,8 +43,8 @@ class ExpensesController < ApplicationController
   # POST /expenses
   # POST /expenses.json
   def create
-    @expense = Expense.new(expense_params,params[:user_id].to_i == current_user.id)
-
+    @expense = Expense.new(expense_params)
+    @expense.user_id = current_user.id if current_user
     respond_to do |format|
       if @expense.save
         format.html { redirect_to expenses_path, notice: 'Expense was successfully created.' }
