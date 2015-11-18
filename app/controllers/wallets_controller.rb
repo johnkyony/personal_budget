@@ -39,10 +39,7 @@ class WalletsController < ApplicationController
   def create
     @wallet = Wallet.new(wallet_params)
     @wallet.user_id = current_user.id if current_user
-    user_wallet_id = Wallet.find_by_id(:id)
-    income = Income.all.where(:wallet_id => user_wallet_id)
-    expense = Expense.all.where(:wallet_id => user_wallet_id)
-    @wallet.amount = income.sum(:amount) - expense.sum(:amount)
+   
 
     respond_to do |format|
       if @wallet.save
