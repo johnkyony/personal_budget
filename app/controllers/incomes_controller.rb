@@ -27,6 +27,7 @@ class IncomesController < ApplicationController
          
     else
       @income = Income.new
+      @income.user_id = current_user.id if current_user
       date = params[:execution_date].blank? ? Date.today : params[:execution_date]
       @income.execution_date = date.strftime("%d.%m.%Y") 
 
