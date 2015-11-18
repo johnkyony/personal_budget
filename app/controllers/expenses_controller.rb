@@ -45,7 +45,7 @@ class ExpensesController < ApplicationController
   def create
     @expense = Expense.new(expense_params)
     @expense.user_id = current_user.id if current_user
-    @expense.execution_date = date.strftime("%d.%m.%Y") 
+
 
     respond_to do |format|
       if @expense.save
