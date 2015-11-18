@@ -12,9 +12,9 @@ class WalletsController < ApplicationController
     # take the wallets id which match the current user id 
     wallet_id = Wallet.pluck(:id)
     #find the expense which have the same wallet id
-    expense = Expense.all.where(:wallet_id => wallet_id)
+    expense = Expense.all.where(:wallet_id => wallet_id , :user_id => user_id)
     # find the income which match the wallet id 
-    income = Income.all.where(:wallet_id => wallet_id)
+    income = Income.all.where(:wallet_id => wallet_id , :user_id => user_id)
     # calculate the balance between the income and expense
     @wallet_balance = income.sum(:amount)- expense.sum(:amount)
 
