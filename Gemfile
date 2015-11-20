@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.4'
 
+gem 'koala'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'gioco'

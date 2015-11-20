@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112160716) do
+ActiveRecord::Schema.define(version: 20151120100957) do
 
   create_table "badges", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20151112160716) do
 
   add_index "expenses", ["user_id"], name: "index_expenses_on_user_id"
   add_index "expenses", ["wallet_id"], name: "index_expenses_on_wallet_id"
+
+  create_table "facebook_oauth_settings", force: :cascade do |t|
+    t.string   "access_token"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "incomes", force: :cascade do |t|
     t.string   "sources"
