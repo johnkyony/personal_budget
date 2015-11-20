@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
 has_many :points  
 has_many :badges , :through => :levels 
 has_many :levels  
-has_one :facebook_oauth_setting
 
 def change_points(options)
   if Gioco::Core::KINDS
@@ -48,7 +47,7 @@ end
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,:omniauthable, :omniauth_providers => [:facebook]
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
