@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :incomes
   resources :wallets
   resources :balance
+  resources :facebook
   get "/callback" => "facebook#callback"
   get "/facebook_profile" => "facebook#facebook_profile"
   devise_for :users

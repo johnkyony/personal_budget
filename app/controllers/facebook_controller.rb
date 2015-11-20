@@ -14,28 +14,24 @@ class FacebookController < ApplicationController
     
     def callback
       unless current_user.facebook_oauth_setting
-        @oauth = session["oauth_obj"]
-        FacebookOauthSetting.create({:access_token => @oauth.get_access_token(params[:code]), :user_id => current_user.id})
-        redirect_to "/facebook_profile"
-      else
-        redirect_to "/"
-      end
-      
+    		@oauth = session["oauth_obj"]
+    		FacebookOauthSetting.create({:access_token => @oauth.get_access_token(params[:code]), :user_id => current_user.id})
+    		redirect_to "/facebook_profile"
+    	else
+    		redirect_to "/"
+    	end
     end
     
-    def facebook_profile
+   def facebook_profile
       if current_user.facebook_oauth_setting
-        @graph = Koala::Facebook::API.new(current_user.facebook_oauth_setting.access_token)
-        @profile = @graph.get_object("me")
-        @picture = @graph.get_picture("me")
-        @feed = @graph.get_connections("me","feed")
-        @friends = @graph.get_connections("me" , "friends")
-        
-      else
-        redirect_to "/"
-        
-      end
-      
+    		@graph = Koala::Facebook::API.new(current_user.facebook_oauth_setting.access_token)
+    		@profile = @graph.get_object("me")
+    		@picture = @graph.get_picture("me")
+    		@feed = @graph.get_connections("me","feed")
+    		@friends = @graph.get_connections("me", "friends")
+    	else
+    		redirect_to "/"
+    	end
     end
     
 end
