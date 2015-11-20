@@ -2,7 +2,7 @@
 
   li = link_to 'Income',incomes_path
   li = link_to 'Expense',expenses_path
-  li = link_to 'Facebook profile' , callback_path
+  li = link_to 'Facebook profile' , facebook_index_path
   li = link_to 'Edit account', edit_user_registration_path
   li = link_to 'Sign out', destroy_user_session_path, :method=>'delete'
 - else
