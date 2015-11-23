@@ -58,6 +58,7 @@ end
 
 
 group :production do
+  gem "rack", "1.6.4"
   gem "pg"
   gem "rails_12factor"
 end

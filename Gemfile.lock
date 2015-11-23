@@ -354,6 +354,7 @@ DEPENDENCIES
   pry-rails
   pundit
   quiet_assets
+  rack (= 1.6.4)
   rack-livereload
   rails (= 4.2.4)
   rails_12factor
