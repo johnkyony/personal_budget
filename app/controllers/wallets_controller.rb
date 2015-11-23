@@ -16,7 +16,9 @@ class WalletsController < ApplicationController
     # find the income which match the wallet id 
     income = Income.all.where(:wallet_id => wallet_id , :user_id => user_id)
     # calculate the balance between the income and expense
-    @wallet_balance = income.sum(:amount)- expense.sum(:amount)
+    @wallets.amount = income.sum(:amount)- expense.sum(:amount)
+    
+   
 
   end
 
