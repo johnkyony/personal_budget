@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   resources :facebook
 
  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
- 
+get "/callback" => "facebook#callback"
+get "/facebook_profile" => "facebook#facebook_profile"
+root :to => 'facebook#index'
   resources :users
-  root to: 'wallets#index'
+  # root to: 'wallets#index'
 
   resources :users do
     resources :wallets do
