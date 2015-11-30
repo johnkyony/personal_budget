@@ -1,6 +1,6 @@
 
 class User < ActiveRecord::Base
-    
+has_one :facebook_oath_setting   
 has_many :points  
 has_many :badges , :through => :levels 
 has_many :levels  
