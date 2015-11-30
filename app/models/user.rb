@@ -1,5 +1,6 @@
 
 class User < ActiveRecord::Base
+    
 has_many :points  
 has_many :badges , :through => :levels 
 has_many :levels  
@@ -50,15 +51,14 @@ end
          :recoverable, :rememberable, :trackable, :validatable,:omniauthable, :omniauth_providers => [:facebook]
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
-  def self.from_omniauth
-    where(provider: auth.provider , uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
-      user.name = auth.info.name
-      # user.image = auth.info.image 
-    end
-    
+  def self.from_omniauth(auth)
+  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    user.email = auth.info.email
+    user.password = Devise.friendly_token[0,20]
+    user.name = auth.info.name   # assuming the user model has a name
+    # user.image = auth.info.image # assuming the user model has an image
   end
+end
   def set_default_role
     self.role ||= :user
   end
