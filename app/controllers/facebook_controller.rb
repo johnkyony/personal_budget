@@ -32,6 +32,7 @@ class FacebookController < ApplicationController
             @friends  = @graph.get_connections("me" , "friends")
         else
             redirect_to "/"
+        end
         
     end
     
