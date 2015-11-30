@@ -28,6 +28,7 @@ class WalletsController < ApplicationController
   # GET /wallets/new
   def new
     @wallet = Wallet.new
+    
   end
 
   # GET /wallets/1/edit
