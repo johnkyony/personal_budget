@@ -55,10 +55,10 @@ group :test do
   gem 'faker'
 end
 
-
+gem 'react-rails', '~> 1.0'
 
 group :production do
-  gem "rack", "1.6.4"
+
   gem "pg"
   gem "rails_12factor"
 end

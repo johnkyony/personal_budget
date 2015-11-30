@@ -16,6 +16,7 @@ module Personalbudget
     g.assets false
     g.view_specs false
   end
+    config.react.addons = true
 
 
     # Settings in config/environments/* take precedence over those specified here.
