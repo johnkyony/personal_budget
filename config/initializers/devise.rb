@@ -234,7 +234,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-     config.omniauth :facebook , "1521732674810345" , "4dc8c0aaa56a5c199d44608ea0ef4453", callback_url: "http://mypersonalbudget.herokuapp.com/", scope: 'email', info_fields: 'email, name'
+     config.omniauth :facebook , "1521732674810345" , "4dc8c0aaa56a5c199d44608ea0ef4453", callback_url: "http://mypersonalbudget.herokuapp.com/"
     # config.omniauth :twitter ,  "LYGkRXSoMVJU7duza5D7LxUhC" , "rOMwVKWggFuIjFoezLpIJjQ4yKdn9b3eqt1pi5XLRIScinSWpd"
       
   # ==> Warden configuration
