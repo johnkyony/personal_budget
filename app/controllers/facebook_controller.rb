@@ -3,24 +3,25 @@ class FacebookController < ApplicationController
     
     def index
         unless current_user.facebook_oauth_setting
-        @oauth = Koala::Facebook::OAuth.new("1521732674810345","4dc8c0aaa56a5c199d44608ea0ef4453","http://mypersonalbudget.herokuapp.com/")
-        session["oauth_obj"] = @oauth
-        redirect_to @oauth.url_for_oauth_code
-    else
-        redirect_to root_path
+            @oauth = Koala::Facebook::OAuth.new("1521732674810345","4dc8c0aaa56a5c199d44608ea0ef4453","http://mypersonalbudget.herokuapp.com/")
+            session["oauth_obj"] = @oauth
+            redirect_to @oauth.url_for_oauth_code
+        else
+            redirect_to root_path
+        end
     end
     
     def callback 
         unless  current_user.facebook_oauth_setting
-        @oauth = session["oauth_obj"]
-        FacebookOauthSetting.create({:access_token => @oauth.get_access_token(params[:code]),:user_id => current_user.id})
-        redirect_to "/facebook_profile"
-        
-    else
-        redirect_to root_path
+            @oauth = session["oauth_obj"]
+            FacebookOauthSetting.create({:access_token => @oauth.get_access_token(params[:code]),:user_id => current_user.id})
+            redirect_to "/facebook_profile"
             
+        else
+            redirect_to root_path
+                
         end
-        
+            
     end
     
     def facebook_profile
